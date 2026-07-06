@@ -1,0 +1,124 @@
+.services {
+  padding: 6rem 1.5rem;
+  background: #ffffff;
+}
+
+.services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.services-grid {
+  display: flex;
+  gap: 1.5rem;
+  min-height: 400px;
+}
+
+.service-card {
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  cursor: default;
+  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-card:hover,
+.service-card.is-active {
+  flex: 2.5;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3,
+.service-card.is-active h3 { color: #e60012; }
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover p,
+.service-card.is-active p { color: #ccc; }
+
+.service-card-example {
+  margin-top: 1.5rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.5s ease;
+}
+
+.service-card:hover .service-card-example,
+.service-card.is-active .service-card-example {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.service-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e60012;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.example-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.example-link {
+  display: inline-block;
+  color: #e60012;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.example-link:hover { border-color: #e60012; }
+
+@media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .service-card,
+  .service-card:hover,
+  .service-card.is-active { flex: 1 !important; }
+  .service-card-example {
+    opacity: 1;
+    max-height: 300px;
+    margin-top: 1rem;
+  }
+}

@@ -1,0 +1,126 @@
+.cases {
+  padding: 6rem 1.5rem;
+  background: #f5f5f5;
+}
+
+.cases-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cases-heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.cases-body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.cases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cases-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.cases-list li:hover,
+.cases-list li.is-active {
+  background: #0a0a0a;
+  color: #fff;
+  transform: translateX(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: #e60012;
+}
+
+.cases-client { font-weight: 700; font-size: 1.1rem; }
+.cases-result {
+  font-size: 0.9rem;
+  color: #e60012;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.cases-list li:hover .cases-result,
+.cases-list li.is-active .cases-result { color: #fff; }
+
+.cases-preview {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cases-preview-inner h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cases-result-big {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #e60012;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.cases-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 500px;
+}
+
+.cases-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cases-tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  background: #f0f0f0;
+  border-radius: 999px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .cases-body { grid-template-columns: 1fr; }
+  .cases-preview { min-height: auto; padding: 2rem; }
+  .cases-result-big { font-size: 2rem; }
+}
