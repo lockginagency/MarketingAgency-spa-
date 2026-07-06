@@ -1,0 +1,322 @@
+.audit {
+    --audit-delay: 0.4s;
+
+    background: #0a0a0a;
+    color: #fff;
+    padding: 6rem 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.audit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #e60012, transparent);
+    opacity: 0.4;
+}
+
+/* === Layout: текст слева, логотип справа === */
+.audit-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.audit-text {
+    flex: 1 1 50%;
+    max-width: 600px;
+}
+
+/* === Логотип справа === */
+.audit-logo {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.audit-lockgin {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    line-height: 1;
+}
+
+.audit-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+    text-shadow:
+        0 0 30px rgba(230, 0, 18, 0.9),
+        0 0 60px rgba(230, 0, 18, 0.4);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.5s ease,
+        text-shadow 0.6s ease;
+}
+
+.audit-sub {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.audit-sub-1,
+.audit-sub-2 {
+    display: block;
+    font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: #888;
+    opacity: 0;
+    transform: translateY(15px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === Задержки по буквам (шаг 0.08s) === */
+.audit.is-visible .audit-letter:nth-child(1) {
+    transition-delay: calc(var(--audit-delay) + 0.2s);
+}
+.audit.is-visible .audit-letter:nth-child(2) {
+    transition-delay: calc(var(--audit-delay) + 0.28s);
+}
+.audit.is-visible .audit-letter:nth-child(3) {
+    transition-delay: calc(var(--audit-delay) + 0.36s);
+}
+.audit.is-visible .audit-letter:nth-child(4) {
+    transition-delay: calc(var(--audit-delay) + 0.44s);
+}
+.audit.is-visible .audit-letter:nth-child(5) {
+    transition-delay: calc(var(--audit-delay) + 0.52s);
+}
+.audit.is-visible .audit-letter:nth-child(6) {
+    transition-delay: calc(var(--audit-delay) + 0.6s);
+}
+.audit.is-visible .audit-letter:nth-child(7) {
+    transition-delay: calc(var(--audit-delay) + 0.68s);
+}
+
+/* MARKETING и AGENCY после всех букв */
+.audit.is-visible .audit-sub-1 {
+    transition-delay: calc(var(--audit-delay) + 0.85s);
+}
+.audit.is-visible .audit-sub-2 {
+    transition-delay: calc(var(--audit-delay) + 1s);
+}
+
+/* Активация */
+.audit.is-visible .audit-letter {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    text-shadow: none;
+}
+
+.audit.is-visible .audit-sub-1,
+.audit.is-visible .audit-sub-2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === Текстовые элементы слева (без изменений) === */
+.audit-title {
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin: 0;
+    transform: translateX(120px);
+    opacity: 0;
+    transition:
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--audit-delay),
+        opacity 0.6s ease var(--audit-delay);
+}
+
+.audit-pain {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #e60012;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    transform: translateY(-60px);
+    opacity: 0;
+    transition:
+        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)
+            calc(var(--audit-delay) + 0.15s),
+        opacity 0.5s ease calc(var(--audit-delay) + 0.15s);
+}
+
+.audit-desc {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #ccc;
+    line-height: 1.6;
+    margin-top: 1rem;
+    transform: translateX(80px);
+    opacity: 0;
+    transition:
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)
+            calc(var(--audit-delay) + 0.3s),
+        opacity 0.6s ease calc(var(--audit-delay) + 0.3s);
+}
+
+.audit-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    transform: translateY(30px);
+    opacity: 0;
+    transition:
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+            calc(var(--audit-delay) + 0.45s),
+        opacity 0.5s ease calc(var(--audit-delay) + 0.45s);
+}
+
+.audit-duration {
+    font-size: 0.95rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.audit-price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.audit-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #e60012;
+    letter-spacing: -0.02em;
+}
+
+.audit-old-price {
+    font-size: 1.1rem;
+    color: #555;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.audit-btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 1.2rem 3.5rem;
+    background: #e60012;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.15rem;
+    border-radius: 999px;
+    box-shadow: 0 0 0 0 rgba(230, 0, 18, 0.7);
+    animation: auditPulse 2s infinite;
+    transform: translateY(40px);
+    opacity: 0;
+    transition:
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+            calc(var(--audit-delay) + 0.55s),
+        opacity 0.5s ease calc(var(--audit-delay) + 0.55s),
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.audit-btn:hover {
+    background: #ff1a2e;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(230, 0, 18, 0.4);
+    animation: none;
+}
+
+.audit.is-visible .audit-title {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.audit.is-visible .audit-pain {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.audit.is-visible .audit-desc {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.audit.is-visible .audit-meta {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.audit.is-visible .audit-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@keyframes auditPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(230, 0, 18, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(230, 0, 18, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(230, 0, 18, 0);
+    }
+}
+
+/* === Адаптив === */
+@media (max-width: 900px) {
+    .audit-inner {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .audit-logo {
+        align-items: center;
+        text-align: center;
+        order: -1;
+    }
+
+    .audit-sub {
+        align-items: center;
+    }
+
+    .audit-title {
+        transform: translateX(60px);
+    }
+}
+
+@media (max-width: 768px) {
+    .audit {
+        padding: 4rem 1.5rem;
+    }
+
+    .audit-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .audit-btn {
+        width: 100%;
+        text-align: center;
+        padding: 1.2rem;
+    }
+}

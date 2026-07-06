@@ -1,0 +1,7 @@
+todo.md
+node_modules
+dist
+flake.nix
+flake.lock
+guide.md
+# pnpm-lock.yaml
