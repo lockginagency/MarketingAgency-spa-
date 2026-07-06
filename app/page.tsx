@@ -1,9 +1,12 @@
-import Navbar from './components/Navbar';
-import Hero from './sections/Hero';
-import Services from './sections/Services';
-import Cases from './sections/Cases';
-import Pricing from './sections/Pricing';
-import Footer from './sections/Footer';
+
+import Navbar from "./components/Navbar";
+import Audit from "./components/Audit";
+import Hero from "./sections/Hero";
+import Services from "./sections/Services";
+import Cases from "./sections/Cases";
+import Pricing from "./sections/Pricing";
+import Footer from "./sections/Footer";
+
 
 export default function Home() {
   return (
@@ -13,6 +16,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Cases />
+        <Audit />
         <Pricing />
       </main>
       <Footer />
