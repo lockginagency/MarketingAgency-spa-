@@ -1,0 +1,111 @@
+.growth {
+    padding: 5rem 1.5rem;
+    background: #ffffff;
+}
+.growth-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.growth-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.growth-line {
+    stroke-dasharray: 960;
+    stroke-dashoffset: 960;
+    animation: growth-draw 4.5s ease-in-out infinite;
+}
+.growth-area {
+    opacity: 0;
+    animation: growth-area 4.5s ease-in-out infinite;
+}
+.gl {
+    opacity: 0;
+    animation: growth-letter 4.5s ease-in-out infinite;
+}
+.gl-1 {
+    animation-delay: 0.18s;
+}
+.gl-2 {
+    animation-delay: 0.41s;
+}
+.gl-3 {
+    animation-delay: 0.63s;
+}
+.gl-4 {
+    animation-delay: 0.86s;
+}
+.gl-5 {
+    animation-delay: 1.08s;
+}
+.gl-6 {
+    animation-delay: 1.31s;
+}
+.gl-7 {
+    animation-delay: 1.53s;
+}
+.growth-dot {
+    opacity: 0;
+}
+.growth-dot-1 {
+    animation: growth-dot 4.5s ease-in-out infinite;
+}
+.growth-dot-2 {
+    animation: growth-dot 4.5s ease-in-out infinite;
+}
+.growth-dot-3 {
+    animation: growth-dot 4.5s ease-in-out infinite;
+}
+
+@keyframes growth-draw {
+    0%,
+    40% {
+        stroke-dashoffset: 960;
+    }
+    62%,
+    90% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 960;
+    }
+}
+@keyframes growth-area {
+    0%,
+    55% {
+        opacity: 0;
+    }
+    66%,
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes growth-letter {
+    0% {
+        opacity: 0;
+    }
+    9%,
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes growth-dot {
+    0%,
+    45% {
+        opacity: 0;
+    }
+    50%,
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

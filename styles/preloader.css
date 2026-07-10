@@ -1,0 +1,53 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s ease;
+}
+.preloader.is-hidden {
+    transform: translateY(-100%);
+}
+.preloader-word {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+.preloader-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: preloader-letter 0.4s ease forwards;
+}
+.preloader-letter.is-red {
+    color: #e60012;
+}
+.preloader-bar {
+    width: 160px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+}
+.preloader-bar-fill {
+    height: 100%;
+    width: 0;
+    background: #e60012;
+    animation: preloader-bar 1.6s ease 0.3s forwards;
+}
+@keyframes preloader-letter {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes preloader-bar {
+    to {
+        width: 100%;
+    }
+}
