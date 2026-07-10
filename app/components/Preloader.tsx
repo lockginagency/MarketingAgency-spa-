@@ -5,7 +5,16 @@ export default function Preloader() {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setHidden(true), 2600);
+    if (typeof window !== "undefined") {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+    document.body.style.overflow = "hidden";
+    const timer = setTimeout(() => {
+      setHidden(true);
+      window.scrollTo(0, 0);
+      document.body.style.overflow = "";
+    }, 2600);
     return () => clearTimeout(timer);
   }, []);
 
