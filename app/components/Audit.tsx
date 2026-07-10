@@ -42,7 +42,12 @@ export default function Audit() {
             </div>
           </div>
 
-          <a href="#footer" className="audit-btn">
+          <a
+            href={audit.paymentLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="audit-btn"
+          >
             {audit.cta}
           </a>
         </div>

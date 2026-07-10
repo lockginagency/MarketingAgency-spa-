@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Evgen — Медиа Агентство",
+  title: "Lockgin — Медиа Агентство",
   description: "Реклама, SMM, копирайтинг и ведение каналов.",
 };
 

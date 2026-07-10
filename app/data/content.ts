@@ -8,6 +8,7 @@ export const audit = {
   price: "1 500 руб",
   oldPrice: "3 500руб",
   cta: "Проверь свой проект",
+  paymentLink: "https://pro.selfwork.ru/kassa/audit-lockgin",
 };
 
 export const heroContent = {
@@ -25,7 +26,7 @@ export const about = {
     "Делать эффективный маркетинг понятным и прозрачным для бизнеса любого масштаба. Мы верим, что за каждой метрикой должен стоять реальный результат.",
   contacts: [
     {
-      email: "hello@evgen.media",
+      email: "lockginmarketing@gmail.com",
       phone: "+7 (962) 610-16-66",
       telegram: "https://t.me/lockgin_marketing",
     },
@@ -111,7 +112,7 @@ export const pricing = [
       "Отмена в любой момент",
     ],
     recommended: false,
-    paymentLink: "https://t.me/lockgin_marketing",
+    paymentLink: "https://pro.selfwork.ru/kassa/probnyj-tarif-lockgi",
   },
   {
     name: "Старт",
@@ -129,7 +130,7 @@ export const pricing = [
       "Отмена в любой момент",
     ],
     recommended: false,
-    paymentLink: "https://t.me/lockgin_marketing",
+    paymentLink: "https://pro.selfwork.ru/kassa/startovyj-tarif-lock",
   },
   {
     name: "Бизнес",
@@ -148,17 +149,20 @@ export const pricing = [
       "Отмена в любой момент",
     ],
     recommended: true,
-    paymentLink: "https://t.me/lockgin_marketing",
+    paymentLink: "https://pro.selfwork.ru/kassa/biznes-tarif-lockgin",
   },
 ];
 
 export const socials = [
-  { name: "Telegram", url: "https://t.me/evgen_agency" },
+  { name: "Telegram", url: "https://t.me/lockgin_marketing" },
   { name: "VK", url: "https://vk.com/evgen_agency" },
-  { name: "YouTube", url: "https://youtube.com/@evgen_agency" },
+  {
+    name: "YouTube",
+    url: "https://youtube.com/@lockginmarketing?si=mhiPE7rfYMkWBuXw",
+  },
 ];
 
 export const contacts = {
-  email: "hello@evgen.media",
+  email: "lockginmarketing@gmail.com",
   phone: "+7 (962) 610-16-66",
 };
