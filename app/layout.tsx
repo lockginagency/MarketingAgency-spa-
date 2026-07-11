@@ -12,7 +12,9 @@ import "@/styles/growth.css";
 import "@/styles/howwework.css";
 import "@/styles/marquee.css";
 import "@/styles/preloader.css";
+import "@/styles/telegram.css";
 import YandexMetrika from "@/app/components/YandexMetrika";
+import TelegramButton from "@/app/components/TelegramButton";
 import Preloader from "@/app/components/Preloader";
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -35,6 +37,7 @@ export default function RootLayout({
       <body className="antialiased">
         <YandexMetrika />
         <Preloader />
+        <TelegramButton />
         {children}
       </body>
     </html>
