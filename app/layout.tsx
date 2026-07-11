@@ -12,6 +12,7 @@ import "@/styles/growth.css";
 import "@/styles/howwework.css";
 import "@/styles/marquee.css";
 import "@/styles/preloader.css";
+import YandexMetrika from "@/app/components/YandexMetrika";
 import Preloader from "@/app/components/Preloader";
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={inter.variable}>
       <body className="antialiased">
+        <YandexMetrika />
         <Preloader />
         {children}
       </body>
