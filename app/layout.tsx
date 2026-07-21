@@ -4,7 +4,7 @@ import "./globals.css";
 import "@/styles/navbar.css";
 import "@/styles/hero.css";
 import "@/styles/services.css";
-import "@/styles/cases.css";
+import "@/styles/orbit.css";
 import "@/styles/pricing.css";
 import "@/styles/footer.css";
 import "@/styles/audit.css";
