@@ -23,8 +23,56 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lockgin — Медиа Агентство",
-  description: "Реклама, SMM, копирайтинг и ведение каналов.",
+  metadataBase: new URL("https://lockgin.netlify.app"),
+  title: {
+    default: "Lockgin — маркетинговое агентство полного цикла",
+    template: "%s — Lockgin",
+  },
+  description:
+    "Маркетинговое агентство Lockgin: реклама в VK и Яндексе, SMM, контент и воронки под ключ. От стратегии до заявок — работаем на результат.",
+  keywords: [
+    "маркетинговое агентство",
+    "реклама VK",
+    "Яндекс Директ",
+    "SMM продвижение",
+    "продвижение бизнеса",
+    "таргетированная реклама",
+    "контент маркетинг",
+    "Lockgin",
+  ],
+  authors: [{ name: "Lockgin" }],
+  creator: "Lockgin",
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "https://lockgin.netlify.app",
+    siteName: "Lockgin",
+    title: "Lockgin — маркетинговое агентство полного цикла",
+    description:
+      "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. От стратегии до заявок — работаем на результат.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 640,
+        height: 640,
+        alt: "Lockgin Marketing Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lockgin — маркетинговое агентство полного цикла",
+    description:
+      "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. Работаем на результат.",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://lockgin.netlify.app",
+  },
 };
 
 export default function RootLayout({
