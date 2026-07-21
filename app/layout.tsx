@@ -25,7 +25,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://lockgin.netlify.app"),
   title: {
-    default: "Lockgin — маркетинговое агентство полного цикла",
+    default: "Lockgin — Маркетинговое агентство полного цикла",
     template: "%s — Lockgin",
   },
   description:
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     url: "https://lockgin.netlify.app",
     siteName: "Lockgin",
-    title: "Lockgin — маркетинговое агентство полного цикла",
+    title: "Lockgin — Маркетинговое агентство полного цикла",
     description:
       "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. От стратегии до заявок — работаем на результат.",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lockgin — маркетинговое агентство полного цикла",
+    title: "Lockgin — Маркетинговое агентство полного цикла",
     description:
       "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. Работаем на результат.",
     images: ["/og-image.jpg"],
