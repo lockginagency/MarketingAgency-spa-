@@ -1,32 +1,34 @@
 const steps = [
-  { n: "1", title: "Заявка", text: "Оставляете заявку на сайте", red: false },
-  { n: "2", title: "Аудит", text: "Разбираем вашу рекламу", red: false },
-  { n: "3", title: "Стратегия", text: "Строим план продвижения", red: true },
-  { n: "4", title: "Запуск", text: "Ведём кампании и контент", red: false },
-  { n: "5", title: "Отчёт", text: "Показываем результат в цифрах", red: false },
+  { num: "01", title: "Заявка", desc: "Обсуждаем задачу и цели." },
+  { num: "02", title: "Аудит", desc: "Разбираем текущий маркетинг." },
+  { num: "03", title: "Стратегия", desc: "План на месяц под вашу нишу." },
+  { num: "04", title: "Запуск", desc: "Ведём кампании и контент." },
+  { num: "05", title: "Отчёт", desc: "Результат в цифрах." },
 ];
 
 export default function HowWeWork() {
   return (
-    <section id="howwework" className="hww">
-      <div className="hww-inner">
-        <h2 className="hww-heading">Как мы работаем</h2>
-        <div className="hww-track">
-          <div className="hww-line-bg" />
-          <div className="hww-line-fg" />
-          <div className="hww-steps">
-            {steps.map((s, i) => (
-              <div
-                key={s.n}
-                className="hww-step"
-                style={{ animationDelay: `${0.3 + i * 0.4}s` }}
-              >
-                <div className={`hww-num ${s.red ? "is-red" : ""}`}>{s.n}</div>
-                <h3 className="hww-step-title">{s.title}</h3>
-                <p className="hww-step-text">{s.text}</p>
-              </div>
-            ))}
-          </div>
+    <section className="how">
+      <div className="how-bgtext">LOCKGIN</div>
+      <div className="how-inner">
+        <div className="how-label">
+          <span className="how-dot" />
+          ПРОЦЕСС
+        </div>
+        <h2 className="how-heading">Как мы работаем</h2>
+
+        <div className="how-stack">
+          {steps.map((s, i) => (
+            <div
+              key={s.num}
+              className={`how-card ${i === steps.length - 1 ? "how-card-last" : ""}`}
+              style={{ zIndex: i, left: `${i * 62}px` }}
+            >
+              <div className="how-num">{s.num}</div>
+              <div className="how-title">{s.title}</div>
+              <div className="how-desc">{s.desc}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

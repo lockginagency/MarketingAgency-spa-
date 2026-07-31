@@ -4,7 +4,6 @@ import "./globals.css";
 import "@/styles/navbar.css";
 import "@/styles/hero.css";
 import "@/styles/services.css";
-import "@/styles/orbit.css";
 import "@/styles/pricing.css";
 import "@/styles/footer.css";
 import "@/styles/audit.css";
@@ -13,24 +12,28 @@ import "@/styles/howwework.css";
 import "@/styles/marquee.css";
 import "@/styles/preloader.css";
 import "@/styles/telegram.css";
+import "@/styles/platforms.css";
 import YandexMetrika from "@/app/components/YandexMetrika";
 import TelegramButton from "@/app/components/TelegramButton";
 import Preloader from "@/app/components/Preloader";
+
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
   display: "swap",
 });
+
 const unbounded = Unbounded({
   subsets: ["latin", "cyrillic"],
   variable: "--font-unbounded",
   display: "swap",
   weight: ["600", "700", "800"],
 });
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lockgin.netlify.app"),
+  metadataBase: new URL("https://lockgin.ru"),
   title: {
-    default: "Lockgin — Маркетинговое агентство полного цикла",
+    default: "Lockgin — маркетинговое агентство полного цикла",
     template: "%s — Lockgin",
   },
   description:
@@ -50,9 +53,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://lockgin.netlify.app",
+    url: "https://lockgin.ru",
     siteName: "Lockgin",
-    title: "Lockgin — Маркетинговое агентство полного цикла",
+    title: "Lockgin — маркетинговое агентство полного цикла",
     description:
       "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. От стратегии до заявок — работаем на результат.",
     images: [
@@ -66,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lockgin — Маркетинговое агентство полного цикла",
+    title: "Lockgin — маркетинговое агентство полного цикла",
     description:
       "Реклама в VK и Яндексе, SMM, контент и воронки под ключ. Работаем на результат.",
     images: ["/og-image.jpg"],
@@ -76,7 +79,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://lockgin.netlify.app",
+    canonical: "https://lockgin.ru",
   },
 };
 
