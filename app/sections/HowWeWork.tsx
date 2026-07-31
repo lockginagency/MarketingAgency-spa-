@@ -22,7 +22,7 @@ export default function HowWeWork() {
             <div
               key={s.num}
               className={`how-card ${i === steps.length - 1 ? "how-card-last" : ""}`}
-              style={{ zIndex: i, left: `${i * 62}px` }}
+              style={{ zIndex: i, left: `${i * 80}px` }}
             >
               <div className="how-num">{s.num}</div>
               <div className="how-title">{s.title}</div>

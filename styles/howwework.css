@@ -54,11 +54,13 @@
 .how-stack {
   position: relative;
   height: 260px;
+  width: 100%;
+  max-width: 700px;
 }
 .how-card {
   position: absolute;
   top: 0;
-  width: 220px;
+  width: 240px;
   height: 240px;
   background: #f5f1e9;
   border: 1px solid #d8d0c0;
@@ -67,6 +69,7 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
+  overflow: hidden;
 }
 .how-card:hover {
   transform: translateY(-14px) scale(1.03);
