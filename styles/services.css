@@ -1,124 +1,111 @@
 .services {
-  padding: 6rem 1.5rem;
-  background: #ffffff;
+  position: relative;
+  background: #efe9df;
+  padding: 5rem 1.5rem 6rem;
+  overflow: hidden;
 }
-
 .services-inner {
-  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
   margin: 0 auto;
 }
-
+.services-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #c00000;
+  margin-bottom: 0.8rem;
+}
+.services-dot {
+  width: 8px;
+  height: 8px;
+  background: #c00000;
+}
 .services-heading {
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-family: var(--font-unbounded);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 3rem;
-  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #0a0a0a;
+  margin: 0 0 0.6rem;
+  display: inline-block;
+  border-bottom: 4px solid #c00000;
+  padding-bottom: 0.3rem;
 }
-
-.services-grid {
+.services-list {
+  margin-top: 3rem;
+}
+.services-row {
   display: flex;
-  gap: 1.5rem;
-  min-height: 400px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2.2rem 0;
+  border-top: 1px solid #d8d0c0;
 }
-
-.service-card {
+.services-row:last-child {
+  border-bottom: 1px solid #d8d0c0;
+}
+.services-row-reverse {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.services-num {
+  font-family: var(--font-unbounded);
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #c00000;
+  min-width: 100px;
+  line-height: 1;
+}
+.services-row-reverse .services-num {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #c9c0ac;
+  text-align: right;
+}
+.services-content {
   flex: 1;
-  background: #f5f5f5;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  cursor: default;
-  transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1), background 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  position: relative;
 }
-
-.service-card:hover,
-.service-card.is-active {
-  flex: 2.5;
-  background: #0a0a0a;
-  color: #fff;
-}
-
-.service-card h3 {
-  font-size: 1.5rem;
+.services-title {
+  font-family: var(--font-unbounded);
   font-weight: 700;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+  font-size: 1.6rem;
+  color: #0a0a0a;
+  margin: 0 0 0.5rem;
 }
-
-.service-card:hover h3,
-.service-card.is-active h3 { color: #e60012; }
-
-.service-card p {
+.services-desc {
+  color: #666;
   font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  transition: color 0.3s ease;
+  margin: 0;
+  line-height: 1.5;
 }
-
-.service-card:hover p,
-.service-card.is-active p { color: #ccc; }
-
-.service-card-example {
-  margin-top: 1.5rem;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.5s ease;
-}
-
-.service-card:hover .service-card-example,
-.service-card.is-active .service-card-example {
-  opacity: 1;
-  max-height: 300px;
-}
-
-.service-label {
+.services-tag {
   display: inline-block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #e60012;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
-}
-
-.example-placeholder {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  background: #c00000;
   color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2px;
 }
-
-.example-link {
-  display: inline-block;
-  color: #e60012;
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.example-link:hover { border-color: #e60012; }
-
-@media (max-width: 768px) {
-  .services-grid {
-    flex-direction: column;
-    min-height: auto;
+@media (max-width: 640px) {
+  .services-row,
+  .services-row-reverse {
+    flex-direction: row;
+    text-align: left;
   }
-  .service-card,
-  .service-card:hover,
-  .service-card.is-active { flex: 1 !important; }
-  .service-card-example {
-    opacity: 1;
-    max-height: 300px;
-    margin-top: 1rem;
+  .services-num {
+    font-size: 2.2rem;
+    min-width: 60px;
+  }
+  .services-row-reverse .services-num {
+    text-align: left;
   }
 }

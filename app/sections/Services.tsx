@@ -1,49 +1,58 @@
-'use client';
-
-import { useState } from 'react';
-import { services } from '@/app/data/content';
+const services = [
+  {
+    num: "01",
+    title: "Настройка рекламы",
+    desc: "VK Реклама, Яндекс Директ, Telegram Ads.",
+    tag: "ОСНОВНОЕ",
+  },
+  {
+    num: "02",
+    title: "Анализ и УТП",
+    desc: "Разбор конкурентов, позиционирование бренда.",
+  },
+  {
+    num: "03",
+    title: "Лендинги и боты",
+    desc: "Квизы, посадочные страницы, чат-боты для заявок.",
+  },
+  {
+    num: "04",
+    title: "Контент",
+    desc: "Посты, Reels, короткие видео, креативы под ЦА.",
+  },
+  {
+    num: "05",
+    title: "Аналитика",
+    desc: "Метрика, UTM-метки, CAC, LTV, ROMI.",
+  },
+  {
+    num: "06",
+    title: "Стратегия",
+    desc: "План на месяц, A/B-тесты креативов и офферов.",
+  },
+];
 
 export default function Services() {
-  const [active, setActive] = useState<string | null>(null);
-
   return (
     <section id="services" className="services">
       <div className="services-inner">
-        <h2 className="services-heading">Что мы можем предложить</h2>
-        <div className="services-grid">
-          {services.map((s) => (
+        <div className="services-label">
+          <span className="services-dot" />
+          ЧТО МЫ ДЕЛАЕМ
+        </div>
+        <h2 className="services-heading">Услуги</h2>
+
+        <div className="services-list">
+          {services.map((s, i) => (
             <div
-              key={s.id}
-              className={`service-card ${active === s.id ? 'is-active' : ''}`}
-              onMouseEnter={() => setActive(s.id)}
-              onMouseLeave={() => setActive(null)}
+              key={s.num}
+              className={`services-row ${i % 2 === 1 ? "services-row-reverse" : ""}`}
             >
-              <div className="service-card-main">
-                <h3>{s.title}</h3>
-                <p>{s.description}</p>
-              </div>
-              <div className="service-card-example">
-                <span className="service-label">Пример</span>
-                {s.example.type === 'image' && (
-                  <div className="example-placeholder">
-                    <span>📷 {s.example.caption}</span>
-                  </div>
-                )}
-                {s.example.type === 'video' && (
-                  <div className="example-placeholder">
-                    <span>▶️ {s.example.caption}</span>
-                  </div>
-                )}
-                {s.example.type === 'url' && (
-                  <a
-                    href={s.example.src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="example-link"
-                  >
-                    🔗 {s.example.caption}
-                  </a>
-                )}
+              <div className="services-num">{s.num}</div>
+              <div className="services-content">
+                <h3 className="services-title">{s.title}</h3>
+                <p className="services-desc">{s.desc}</p>
+                {s.tag && <span className="services-tag">{s.tag}</span>}
               </div>
             </div>
           ))}
