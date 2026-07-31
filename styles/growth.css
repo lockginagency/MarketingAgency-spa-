@@ -35,22 +35,24 @@
 }
 .growth-bars {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   gap: 2.5rem;
   margin-bottom: 2.5rem;
-  height: 320px;
 }
-.growth-bar-col {
+.growth-bar-item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
   width: 140px;
-  height: 100%;
+}
+.growth-bar-track {
+  display: flex;
+  align-items: flex-end;
+  height: 240px;
 }
 .growth-bar {
-  width: 100%;
+  width: 140px;
   background: #d3cabb;
   transition: height 0.3s ease;
 }
@@ -63,6 +65,7 @@
   font-weight: 700;
   font-size: 1.05rem;
   color: #0a0a0a;
+  text-align: center;
 }
 .growth-bar-label-last {
   color: #c00000;
@@ -113,9 +116,11 @@
 @media (max-width: 640px) {
   .growth-bars {
     gap: 1rem;
-    height: 200px;
   }
-  .growth-bar-col {
+  .growth-bar-item {
+    width: 70px;
+  }
+  .growth-bar {
     width: 70px;
   }
   .growth-bar-desc {

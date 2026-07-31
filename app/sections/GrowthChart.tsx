@@ -14,11 +14,13 @@ export default function GrowthChart() {
 
         <div className="growth-bars">
           {steps.map((s, i) => (
-            <div key={s.label} className="growth-bar-col">
-              <div
-                className={`growth-bar ${i === steps.length - 1 ? "growth-bar-last" : ""}`}
-                style={{ height: `${s.h}px` }}
-              />
+            <div key={s.label} className="growth-bar-item">
+              <div className="growth-bar-track">
+                <div
+                  className={`growth-bar ${i === steps.length - 1 ? "growth-bar-last" : ""}`}
+                  style={{ height: `${s.h}px` }}
+                />
+              </div>
               <div
                 className={`growth-bar-label ${i === steps.length - 1 ? "growth-bar-label-last" : ""}`}
               >
