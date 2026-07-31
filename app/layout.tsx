@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Unbounded } from "next/font/google";
 import "./globals.css";
 import "@/styles/navbar.css";
 import "@/styles/hero.css";
@@ -21,7 +21,12 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-
+const unbounded = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-unbounded",
+  display: "swap",
+  weight: ["600", "700", "800"],
+});
 export const metadata: Metadata = {
   metadataBase: new URL("https://lockgin.netlify.app"),
   title: {
@@ -81,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ru" className={`${inter.variable} ${unbounded.variable}`}>
       <body className="antialiased">
         <YandexMetrika />
         <Preloader />
